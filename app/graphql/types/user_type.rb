@@ -3,7 +3,7 @@ module Types
     name "User"
     description "a user"
 
-    field :id, !types.Int
+    global_id_field :id
     field :email, !types.String
   end
 end
