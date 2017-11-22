@@ -17,7 +17,7 @@ users = {
 }
 
 users.each do |email, projects|
-  user = User.new(email: email, password: Faker::Internet.password)
+  user = User.new(email: email, password: Faker::Internet.password, graph_token: SecureRandom.hex(8))
   projects.each{|title| user.projects.build(title: title)}
   user.save!
 end
