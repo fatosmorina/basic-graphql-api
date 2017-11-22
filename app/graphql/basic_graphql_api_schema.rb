@@ -7,7 +7,7 @@ BasicGraphqlApiSchema = GraphQL::Schema.define do
   }
 
   object_from_id ->(id, ctx){
-    type_name, object_id = GraphQL::Schema::UniqueWithinType.decode(id)
+    type_name, object_id = GraphQL::Schema::UniqueWithinType.encode(type.name, obj.id, separator: "-#{ctx[:current_user].graph_token}-")
     type_name.constantize.find(object_id)
   }
 
