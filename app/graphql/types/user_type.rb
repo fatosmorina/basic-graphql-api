@@ -4,7 +4,7 @@ module Types
     description "a user"
 
     field :id, !types.Int
-    field :email, !types.String
+    field :emailAddress, !types.String, property: :email
 
   end
 end
