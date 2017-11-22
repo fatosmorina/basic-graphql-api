@@ -10,4 +10,15 @@ BasicGraphqlApiSchema = GraphQL::Schema.define do
     type_name, object_id = GraphQL::Schema::UniqueWithinType.decode(id)
     type_name.constantize.find(object_id)
   }
+
+  resolve_type ->(obj){
+    case obj
+    when Project
+      Types::ProjectType
+    when User
+      Types::UserType
+    else
+      raise "Unexpected object: #{obj}"
+    end
+  }
 end
