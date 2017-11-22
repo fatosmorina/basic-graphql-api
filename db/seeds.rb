@@ -4,4 +4,14 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   Character.create(name: 'Luke', movie: movies.firsti)
+#
+project_titles = 12.times.map{ Faker::Book.title }
+
+border = 0.5
+offset = project_titles.length * border
+
+users = {
+  'erenyegar@email.com' => project_titles[0, offset],
+  'leviackerman@gmail.com' => project_titles[offset, -1],
+}
