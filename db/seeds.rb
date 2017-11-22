@@ -13,7 +13,7 @@ offset = project_titles.length * border
 
 users = {
   'erenyegar@email.com' => project_titles[0, offset],
-  'leviackerman@gmail.com' => project_titles[offset..-1],
+  'leviackerman@gmail.com' => project_titles[offset..-1]
 }
 
 users.each do |email, projects|
