@@ -21,7 +21,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   field :projects, types[Types::ProjectType] do
     description "the projects for the current user"
     resolve -> (obj, args, ctx){
-      Project.all
+      ctx[:current_user].projects
     }
   end
 end
