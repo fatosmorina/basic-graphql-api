@@ -3,7 +3,7 @@ module Types
     name "Project"
     description "a project"
 
-    field :id, !types.Int
+    global_id_field :id
     field :title, !types.String do
       resolve ->(project, args, ctx){
         project.user.email + '-' + project.title
