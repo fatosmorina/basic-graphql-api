@@ -9,5 +9,7 @@ module Types
         project.user.email + '-' + project.title
       }
     end
+
+    field :user, !UserType
   end
 end
