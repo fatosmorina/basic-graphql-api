@@ -11,7 +11,7 @@ BasicGraphqlApiSchema = GraphQL::Schema.define do
     type_name.constantize.find(object_id)
   }
 
-  resolve_type ->(obj){
+  resolve_type ->(obj, ctx){
     case obj
     when Project
       Types::ProjectType
