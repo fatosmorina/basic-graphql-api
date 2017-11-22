@@ -5,8 +5,8 @@ module Types
 
     field :id, !types.Int
     field :title, !types.String do
-      resolve ->(obj, args, ctx){
-        obj.user.email + '-' + obj.title
+      resolve ->(project, args, ctx){
+        project.user.email + '-' + project.title
       }
     end
   end
