@@ -3,6 +3,8 @@ module Types
     name "User"
     description "a user"
 
+    implements GraphQL::Relay::Node.interface
+
     global_id_field :id
     field :email, !types.String
   end
