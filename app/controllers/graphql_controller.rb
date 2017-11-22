@@ -1,5 +1,4 @@
 class GraphqlController < ApplicationController
-  before_action :authenticate_user!
 
   def execute
     variables = ensure_hash(params[:variables])
